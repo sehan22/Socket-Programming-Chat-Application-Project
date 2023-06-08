@@ -15,10 +15,12 @@ import javafx.geometry.Pos;
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -38,6 +40,8 @@ public class ClientFormController {
     public JFXTextField txtMessage;
     public Text txtUseName;
     public VBox contentVBox;
+    public ScrollPane scrollPane;
+    public AnchorPane contentPane;
 
     Socket socket;
     DataInputStream dataInputStream;
@@ -53,20 +57,19 @@ public class ClientFormController {
 
     public void initialize() {
         txtUseName.setText(LoginFormController.userName);
+        contentVBox.setStyle("-fx-background-color: white");
 
         new Thread(()->{
 
             try {
 
                 socket = new Socket("localhost", 3000);
-                txtArea.appendText("\n\nUser Connected !");
 
                 dataInputStream = new DataInputStream(socket.getInputStream());
                 dataOutputStream = new DataOutputStream(socket.getOutputStream());
 
                 while(!message .equals("finish")){
                     message = dataInputStream.readUTF();
-                    txtArea.appendText("\n\nServer : " + message);
 
                     Platform.runLater(()-> {
                         Label text = new Label();
@@ -77,6 +80,7 @@ public class ClientFormController {
                         final GridPane gridpane = new GridPane();
                         gridpane.setPadding(new Insets(5));
                         gridpane.setHgap(10);
+                        text.setStyle("-fx-font-size: 15px; -fx-padding: 6px; -fx-text-fill: white;-fx-background-color: #9A0680; -fx-background-radius: 10px; -fx-");
                         gridpane.setVgap(10);
                         gridpane.minHeight(30);
                         text.maxHeight(200);
@@ -88,7 +92,6 @@ public class ClientFormController {
                         gridpane.setAlignment(Pos.CENTER_LEFT);
 
                         root.getChildren().add(gridpane);
-
                         contentVBox.getChildren().add(gridpane);
 
                         txtMessage.clear();
@@ -119,6 +122,7 @@ public class ClientFormController {
 
                 final GridPane gridpane = new GridPane();
                 gridpane.setPadding(new Insets(5));
+                text.setStyle("-fx-font-size: 15px; -fx-padding: 6px; -fx-text-fill: white;-fx-background-color: #79018C; -fx-background-radius: 10px");
                 gridpane.setHgap(10);
                 gridpane.setVgap(10);
                 gridpane.minHeight(30);

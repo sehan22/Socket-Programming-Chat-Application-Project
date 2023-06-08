@@ -4,7 +4,6 @@
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -34,9 +33,9 @@
             <Image url="@../assests/Group%203.png" />
          </image>
       </ImageView>
-      <AnchorPane layoutX="77.0" layoutY="123.0" prefHeight="428.0" prefWidth="793.0">
+      <AnchorPane fx:id="contentPane" layoutX="77.0" layoutY="123.0" prefHeight="428.0" prefWidth="793.0" style="-fx-background-color: transparent;">
          <children>
-            <ScrollPane prefHeight="435.0" prefWidth="799.0" style="-fx-background-radius: 5px; -fx-border-radius: 5px;">
+            <ScrollPane fx:id="scrollPane" prefHeight="435.0" prefWidth="799.0" style="-fx-background-radius: 5px; -fx-border-radius: 5px; -fx-border-width: 0; -fx-background-color: white;">
                <content>
                   <VBox fx:id="contentVBox" prefHeight="433.0" prefWidth="797.0" />
                </content>
@@ -99,6 +98,5 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Text>
-      <TextArea fx:id="txtArea" focusTraversable="false" layoutX="923.0" layoutY="126.0" prefHeight="428.0" prefWidth="84.0" style="-fx-background-color: none;" />
    </children>
 </AnchorPane>
