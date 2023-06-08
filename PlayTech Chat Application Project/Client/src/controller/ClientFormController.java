@@ -33,6 +33,7 @@ import java.net.MalformedURLException;
 import java.net.Socket;
 import java.net.URL;
 
+import static controller.LoginFormController.userName;
 
 
 public class ClientFormController {
@@ -53,8 +54,6 @@ public class ClientFormController {
     PrintWriter printWriter;
     public static String userName;
 
-    public VBox vBoxPane1;
-
     public void initialize() {
         txtUseName.setText(LoginFormController.userName);
         contentVBox.setStyle("-fx-background-color: white");
@@ -64,6 +63,7 @@ public class ClientFormController {
             try {
 
                 socket = new Socket("localhost", 3000);
+                printWriter = new PrintWriter(socket.getOutputStream(), true);
 
                 dataInputStream = new DataInputStream(socket.getInputStream());
                 dataOutputStream = new DataOutputStream(socket.getOutputStream());
@@ -80,7 +80,7 @@ public class ClientFormController {
                         final GridPane gridpane = new GridPane();
                         gridpane.setPadding(new Insets(5));
                         gridpane.setHgap(10);
-                        text.setStyle("-fx-font-size: 15px; -fx-padding: 6px; -fx-text-fill: white;-fx-background-color: #9A0680; -fx-background-radius: 10px; -fx-");
+                        text.setStyle("-fx-font-size: 15px; -fx-padding: 6px; -fx-text-fill: white;-fx-background-color: #9A0680; -fx-background-radius: 10px;");
                         gridpane.setVgap(10);
                         gridpane.minHeight(30);
                         text.maxHeight(200);
@@ -147,8 +147,8 @@ public class ClientFormController {
         }
     }
 
-    public void btnImageSendOnAction(ActionEvent actionEvent) throws MalformedURLException {
-        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+    public void btnImageSendOnAction(MouseEvent mouseEvent) throws MalformedURLException {
+        Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Choose a Image");
         File file = fileChooser.showOpenDialog(stage);
@@ -160,9 +160,6 @@ public class ClientFormController {
             System.out.println("File Was Selected");
             URL url = file.toURI().toURL();
             System.out.println(url);
-            HBox hBox = new HBox();
-            hBox.setAlignment(Pos.CENTER_RIGHT);
-            hBox.setPadding(new Insets(5, 10, 5, 5));
             ImageView imageView = new ImageView();
             Image image = new Image(String.valueOf(url));
             imageView.setImage(image);
@@ -171,7 +168,7 @@ public class ClientFormController {
             VBox vBox = new VBox(imageView);
             vBox.setAlignment(Pos.CENTER_RIGHT);
             vBox.setPadding(new Insets(5, 10, 5, 5));
-            vBoxPane1.getChildren().add(vBox);
+            contentVBox.getChildren().add(vBox);
         }
     }
 
