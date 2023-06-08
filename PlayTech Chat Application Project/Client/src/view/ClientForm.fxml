@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="679.0" prefWidth="949.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ClientFormController">
+   <children>
+      <ImageView fitHeight="24.0" fitWidth="17.0" layoutX="915.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assests/icons8-close-30.png" />
+         </image>
+      </ImageView>
+      <JFXButton focusTraversable="false" layoutX="911.0" layoutY="14.0" onAction="#exitOnAction" prefHeight="25.0" prefWidth="0.0" ripplerFill="WHITE" style="-fx-border-radius: 100px; -fx-background-radius: 200px;" text="Button" textFill="#9a0680">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <ImageView fitHeight="503.0" fitWidth="858.0" layoutX="46.0" layoutY="88.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assests/Default%20WhatsApp%20background%20for%20people%20who%20lost%20it%20Requested%20by%20u%201.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="76.0" fitWidth="200.0" layoutX="375.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assests/Group%203.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="77.0" layoutY="123.0" prefHeight="428.0" prefWidth="793.0">
+         <children>
+            <ScrollPane prefHeight="435.0" prefWidth="799.0" style="-fx-background-radius: 5px; -fx-border-radius: 5px;">
+               <content>
+                  <VBox fx:id="contentVBox" prefHeight="433.0" prefWidth="797.0" />
+               </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="50.0" fitWidth="697.0" layoutX="185.0" layoutY="606.0" pickOnBounds="true">
+         <image>
+            <Image url="@../assests/Rectangle%207.png" />
+         </image>
+      </ImageView>
+      <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="828.0" layoutY="613.0" minHeight="30.0" minWidth="30.0" onAction="#btnSendOnAction" prefHeight="35.0" prefWidth="35.0" ripplerFill="WHITE" style="-fx-background-radius: 50px;">
+         <graphic>
+            <ImageView fitHeight="40.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" translateX="-8.0">
+               <image>
+                  <Image url="@../assests/Communication/Paper_Plane.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="69.0" layoutY="614.0" minHeight="30.0" minWidth="30.0" onAction="#btnImageSendOnAction" prefHeight="35.0" prefWidth="35.0" ripplerFill="WHITE" style="-fx-background-radius: 5px; -fx-background-color: white;">
+         <graphic>
+            <ImageView fitHeight="40.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" translateX="1.0">
+               <image>
+                  <Image url="@../assests/Interface/Link_Horizontal.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="131.0" layoutY="614.0" minHeight="30.0" minWidth="30.0" onAction="#btnEmojiOnAction" prefHeight="35.0" prefWidth="35.0" ripplerFill="WHITE" style="-fx-background-radius: 5px; -fx-background-color: white;">
+         <graphic>
+            <ImageView fitHeight="40.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true" translateX="-2.0">
+               <image>
+                  <Image url="@../assests/icons8-happy-50%201.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXTextField fx:id="txtMessage" focusColor="WHITE" focusTraversable="false" layoutX="206.0" layoutY="616.0" prefHeight="28.0" prefWidth="618.0" promptText="Type a message" unFocusColor="WHITE">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </JFXTextField>
+      <Text fill="#3c3c3c" layoutX="79.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User : ">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text fx:id="txtUseName" fill="#3c3c3c" layoutX="131.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <TextArea fx:id="txtArea" focusTraversable="false" layoutX="923.0" layoutY="126.0" prefHeight="428.0" prefWidth="84.0" style="-fx-background-color: none;" />
+   </children>
+</AnchorPane>

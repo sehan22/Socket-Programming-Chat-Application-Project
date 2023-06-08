@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="679.0" prefWidth="475.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginFormController">
+   <children>
+      <ImageView fitHeight="679.0" fitWidth="475.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assests/Group%201.png" />
+         </image>
+      </ImageView>
+      <JFXTextField fx:id="txtUserName" focusTraversable="false" labelFloat="true" layoutX="95.0" layoutY="252.0" prefHeight="39.0" prefWidth="286.0" promptText="UserName">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </JFXTextField>
+      <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="190.0" layoutY="320.0" onAction="#btnSignInOnAction" prefHeight="39.0" prefWidth="94.0" style="-fx-background-color: #9A0680;" text="Sign-In" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <ImageView fitHeight="24.0" fitWidth="17.0" layoutX="441.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assests/icons8-close-30.png" />
+         </image>
+      </ImageView>
+      <JFXButton focusTraversable="false" layoutX="437.0" layoutY="14.0" onAction="#exitOnAction" prefHeight="25.0" prefWidth="0.0" ripplerFill="WHITE" style="-fx-border-radius: 100px; -fx-background-radius: 200px;" text="Button" textFill="#9a0680">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton focusTraversable="false" layoutX="290.0" layoutY="525.0" maxWidth="40.0" minHeight="59.0" minWidth="59.0" prefHeight="57.0" prefWidth="40.0" ripplerFill="WHITE" style="-fx-border-radius: 100px; -fx-background-radius: 200px;" text="Button" textFill="#9a0680">
+         <graphic>
+            <ImageView fitHeight="59.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true" translateX="-7.0" translateY="1.0" x="4.0" y="13.0">
+               <image>
+                  <Image url="@../assests/Social%20Media/Whatsapp.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton focusTraversable="false" layoutX="131.0" layoutY="525.0" maxWidth="40.0" minHeight="59.0" minWidth="59.0" prefHeight="57.0" prefWidth="40.0" ripplerFill="WHITE" style="-fx-border-radius: 100px; -fx-background-radius: 200px;" text="Button" textFill="#9a0680">
+         <graphic>
+            <ImageView fitHeight="59.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true" translateX="-7.0" translateY="1.0" x="4.0" y="13.0">
+               <image>
+                  <Image url="@../assests/Social%20Media/Facebook.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton focusTraversable="false" layoutX="208.0" layoutY="525.0" maxWidth="40.0" minHeight="59.0" minWidth="59.0" prefHeight="57.0" prefWidth="40.0" ripplerFill="WHITE" style="-fx-border-radius: 100px; -fx-background-radius: 200px;" text="Button" textFill="#9a0680">
+         <graphic>
+            <ImageView fitHeight="59.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true" translateX="-7.0" translateY="1.0" x="4.0" y="13.0">
+               <image>
+                  <Image url="@../assests/Social%20Media/Messenger.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+   </children>
+</AnchorPane>
